@@ -1,0 +1,59 @@
+<mat-card style="margin: 0.5rem 0; border-radius: 1rem">
+  <!-- #region Date value at the top of the card-->
+  <mat-card-header style="position: relative; margin: 0; padding: 0">
+    <mat-card-subtitle>
+      <div class="main-date">
+        {{ showDate(data.date).fromNow() }}
+      </div>
+      <div class="full-date">
+        {{ showDate(data.date).format("YYYY/MM/DD HH:MM") }}
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <!-- #endregion -->
+  <!-- #region Card Header-->
+  <mat-card-header>
+    <img src="data:image/png;base64,{{ data.avatar }}" mat-card-avatar />
+    <mat-card-title>{{ data.name }}</mat-card-title>
+    <mat-card-subtitle>
+      <div style="display: flex; justify-content: space-between">
+        @{{ data.username }}
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <!-- #endregion -->
+  <!-- #region Body of card and the numbers of likes, comments & shares-->
+  <mat-card-content style="margin-bottom: 0">
+    <div [innerHtml]="data.content"></div>
+    <mat-card-subtitle
+      style="display: flex; justify-content: flex-start; margin: 0.5rem 0"
+    >
+      <p style="margin-right: 1.5rem">
+        {{ data.number_of_likes || 0 }}
+        {{ data.number_of_likes > 1 ? "Likes" : "Like" }}
+      </p>
+      <p style="margin-right: 1.5rem">
+        {{ data.number_of_comments || 0 }}
+        {{ data.number_of_comments > 1 ? "Comments" : "Comment" }}
+      </p>
+      <p style="margin-right: 1.5rem">
+        {{ data.number_of_shares || 0 }}
+        {{ data.number_of_shares > 1 ? "Shares" : "Share" }}
+      </p>
+    </mat-card-subtitle>
+  </mat-card-content>
+  <!-- #endregion -->
+  <!-- #region Like, Comment & Share buttons -->
+  <mat-card-actions style="display: flex; justify-content: space-between">
+    <button mat-button>
+      <span class="material-icons md-18">thumb_up</span>Like
+    </button>
+    <button mat-button>
+      <span class="material-icons md-18">comment</span>Comment
+    </button>
+    <button mat-button>
+      <span class="material-icons md-18">share</span>SHARE
+    </button>
+  </mat-card-actions>
+  <!-- #endregion -->
+</mat-card>

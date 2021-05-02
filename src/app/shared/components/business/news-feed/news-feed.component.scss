@@ -1,0 +1,17 @@
+.main-date {
+  &:hover ~ .full-date {
+    opacity: 1;
+    left: 150px;
+    display: block;
+  }
+}
+.full-date {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: all 1s;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  word-wrap: normal;
+}

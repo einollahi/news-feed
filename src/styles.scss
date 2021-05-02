@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./styles-materials.scss");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: vazir, sans-serif !important;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6;
+  color: #222;
+}

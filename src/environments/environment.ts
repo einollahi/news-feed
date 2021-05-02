@@ -1,16 +1,12 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { MockNewsFeedService } from 'src/app/shared/mocks/news-feed.mock.service';
+import { MockUserService } from 'src/app/shared/mocks/user.mock.service';
+import { NewsFeedService } from 'src/app/shared/services/news-feed.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 export const environment = {
-  production: false
+  production: true,
+  providers: [
+    { provide: NewsFeedService, useClass: MockNewsFeedService },
+    { provide: UserService, useClass: MockUserService },
+  ],
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

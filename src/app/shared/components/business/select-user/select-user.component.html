@@ -1,0 +1,23 @@
+<div
+  class="user-block"
+  (click)="selectOrDeselectUser()"
+  [ngClass]="{ selected: isSelected }"
+  fxLayout="row"
+  fxLayout.gt-lg
+>
+  <div
+    class="user-info"
+    fxLayout="row"
+    fxLayoutAlign="center"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="center center"
+  >
+    <img src="data:image/png;base64,{{ data.avatar }}" mat-card-avatar />
+    <div fxHide.lt-sm>
+      <h4>{{ data.name }}</h4>
+      <h5 [ngStyle]="{ color: isSelected ? '#fafafa' : '#777' }">
+        @ {{ data.username }}
+      </h5>
+    </div>
+  </div>
+</div>

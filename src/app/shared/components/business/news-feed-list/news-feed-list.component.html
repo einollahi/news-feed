@@ -1,0 +1,14 @@
+<div *ngFor="let feed of feeds">
+  <app-news-feed [data]="feed"></app-news-feed>
+</div>
+<div>
+  <mat-paginator
+    *ngIf="length !== 0"
+    [pageIndex]="pageIndex"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10]"
+    (page)="handlePageEvent($event)"
+  >
+  </mat-paginator>
+</div>
